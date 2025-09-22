@@ -1,0 +1,11 @@
+:root {
+  --color-texto: #fff;
+  --color-secundario: #fff;
+  --color-acento: #635e5e; /*color de texto con la configuracion actual*/
+}
+.logo{
+    width: 100px;
+    height: auto;
+    margin: 0;
+    padding: 0;                                                                                     
+}

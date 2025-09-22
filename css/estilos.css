@@ -1,0 +1,263 @@
+:root {
+  --color-texto: #fff;
+  --color-secundario: #fff;
+  --color-acento: #635e5e; /*color de texto con la configuracion actual*/
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 75px; /*tamaño de fuente de la barra del menu*/
+}
+.subtitulo-abajo {
+  /*cambio la posicion del subtitulo Productos*/
+  position: absolute;
+  /*cambia la posicion*/
+  left: 200px;
+  /*cambio la posicion de la palabra*/
+  top: 750px;
+}
+.img-ejemplo {
+  width: 2500px;
+  display: block;
+  margin: 600px auto 0; /* mueve hacia abajo (top), centra horizontalmente */
+}
+.contenedor-ejemplo {
+  margin-top: 400px;
+  /* ajustá este valor para bajar la imagen */
+  text-align: center;
+}
+/*para las tres tarjetas*/
+/* Contenedor de la tarjeta */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+body {
+  min-height: 4000px; /* la página mide al menos 4000px */
+  
+}
+
+.tarjeta {
+  width: 1300px;
+  background-color: #f5f5f7;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex; 
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+/* ------------------- */
+/* ESTILOS DEL MODAL tipo Apple */
+/* ------------------- */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  max-width: 4000px; /* Aumenta este valor para ensanchar el modal */
+  width: 90%;
+  padding: 100px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: scaleUp 0.3s ease;
+  overflow-y: auto;
+  max-height: 90vh;
+  box-sizing: border-box;
+}
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+.modal-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*terminan las tres tarjetas*/
+header {
+  background-color: #fff; /*color de la barra lateral*/
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+img {
+  width: 1000px;
+}
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+} /*agreado de la pagina*/
+
+body {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+a {
+  color: var(--color-acento);
+}
+
+/*efecto apple*/
+.modal-fullscreen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #fff;
+  animation: fadeIn 0.4s ease forwards;
+  overflow-y: auto;
+}
+
+.modal-fullscreen-contenido {
+  max-width: 1000px;
+  margin: 5vh auto;
+  padding: 80px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  animation: slideUp 0.4s ease;
+}
+/* cambiar tamño dentro del modal*/
+.modal-fullscreen-contenido h2 {
+  font-size: 75px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.modal-fullscreen-contenido p {
+  font-size: 75px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.modal-fullscreen-contenido img {
+  width: 100%;
+  max-width: 3000px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-fullscreen .cerrar {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  font-size: 40px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  to {
+    background-color: rgba(255, 255, 255, 1);
+  }
+}
+.tarjetas-pestania {
+  margin-bottom: 400px; /* agrega espacio debajo de las tarjetas */
+}
+
+/*.columnas3{
+  column-count: 3; /* Divide el texto en 3 columnas */
+  /*column-gap: 20px; /* Espacio de 20 píxeles entre columnas */
+ /* column-rule: 1px solid #ccc; /* Línea de separación de 1px gris */
+/*}
